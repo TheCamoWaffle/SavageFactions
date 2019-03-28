@@ -1,4 +1,20 @@
-# SavageFactions
+# SavageFactions - Core Edition
+
+---
+This is a version of SavageFactions that adds "Core Blocks" into the game.
+
+Core Blocks are required to claim land and all claims must be attached to the core block claim.
+Chunks that have core blocks are visible on /f map and will appear as an aqua indicator on the map.
+Chunks can be broken and will lose lives. Lives regenerate over time and if a faction losers all their lives, their land will be unclaimed and they'll be able to be raided..
+
+New Commands
+  - /f core (Gives a core block)
+    * Only available for the Faction Owner
+    * Can't use if faction already has a core block placed
+    
+New Permissions
+  - factions.core - Allows access to /f core
+---
 
 SavageFactions is a fork of the popular Factions plugin FactionsUUID. The Goal of SavageFactions is to make the ultimate competitive factions experience.
 
