@@ -164,6 +164,7 @@ public class CmdUnclaim extends FCommand {
 
 			targetFaction.setCoreSet(false);
 			targetFaction.setCoreLives(SavageFactions.plugin.getConfig().getInt("core.default-lives"));
+			SavageFactions.plugin.hologramMap.get(targetFaction).despawn();
 			Board.getInstance().unclaimAll(targetFaction.getId());
 			confirmingUnclaim.remove(fme.getPlayer());
 			return true;

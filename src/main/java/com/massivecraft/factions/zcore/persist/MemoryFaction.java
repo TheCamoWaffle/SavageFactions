@@ -20,6 +20,10 @@ import com.massivecraft.factions.zcore.fperms.Permissable;
 import com.massivecraft.factions.zcore.fperms.PermissableAction;
 import com.massivecraft.factions.zcore.fupgrades.Upgrade;
 import com.massivecraft.factions.zcore.util.TL;
+import de.inventivegames.hologram.Hologram;
+import de.inventivegames.hologram.HologramAPI;
+import de.inventivegames.hologram.touch.TouchAction;
+import de.inventivegames.hologram.touch.TouchHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -319,6 +323,9 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
 			}
 		}
 
+		if (SavageFactions.plugin.hologramMap.containsKey(this)) {
+			SavageFactions.plugin.hologramMap.get(this).despawn();
+		}
 		Factions.getInstance().removeFaction(this.getId());
 		FTeamWrapper.applyUpdates(this);
 	}

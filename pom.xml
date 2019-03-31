@@ -69,7 +69,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <finalName>Factions-${maven.build.timestamp}</finalName>
+                    <finalName>Core-Factions-${project.version}</finalName>
                 </configuration>
             </plugin>
             <plugin>
@@ -346,7 +346,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <dependency>
+            <groupId>org.inventivetalent</groupId>
+            <artifactId>hologramapi</artifactId>
+            <version>1.4.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <repositories>
@@ -385,6 +390,10 @@
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>inventive-repo</id>
+            <url>https://repo.inventivetalent.org/content/repositories/releases</url>
         </repository>
     </repositories>
 

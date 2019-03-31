@@ -249,6 +249,7 @@ public enum TL {
 	CORE_CANT_PLACE("&a&lCore &8\u00BB &7Only leaders may establish a faction core!"),
 	CORE_CONFIRM_BREAK("&a&lCore &8\u00BB &7You're about to break your core! Break again in 10 seconds to confirm!"),
     CORE_CONFIRM_UNCLAIM("&a&lCore &8\u00BB &7You're about to unclaim your core resulting in all land being lost! Break again in 10 seconds to confirm!"),
+	CORE_INFO("&a&lCore &8\u00BB &7This core has &c%health%% HP &7remaining."),
 	CORE_LIVE_LOST("&a&lCore &8\u00BB &7Your core has lost a life! It has &c%health%% HP &7remaining."),
 	CORE_NOT_SET("&a&lCore &8\u00BB &7You can't claim while your core isn't set!"),
 	CORE_SET("&a&lCore &8\u00BB &7Your core has been set"),

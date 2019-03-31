@@ -2,7 +2,8 @@ name: Factions
 version: ${project.version}
 api-version: 1.13
 main: com.massivecraft.factions.SavageFactions
-authors: [Olof Larsson, Brett Flannigan, drtshock, ProSavage, AL56AF50, Driftay]
+authors: [Olof Larsson, Brett Flannigan, drtshock, ProSavage, AL56AF50, Driftay, CarrlosM (Carlos#2018)]
+depend: [HologramAPI]
 softdepend: [Skript, CoreProtect, PlayerVaults, PlaceholderAPI, MVdWPlaceholderAPI, PermissionsEx, Permissions, Essentials, EssentialsChat, HeroChat, iChat, LocalAreaChat, LWC, nChat, ChatManager, CAPI, AuthMe, Vault, Spout, WorldEdit, WorldGuard, AuthDB, CaptureThePoints, CombatTag, dynmap, FactionsTop]
 website: www.prosavage.net
 commands:

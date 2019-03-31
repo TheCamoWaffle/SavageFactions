@@ -25,6 +25,8 @@ import com.massivecraft.factions.zcore.fupgrades.EXPUpgrade;
 import com.massivecraft.factions.zcore.fupgrades.FUpgradesGUI;
 import com.massivecraft.factions.zcore.fupgrades.SpawnerUpgrades;
 import com.massivecraft.factions.zcore.util.TextUtil;
+import de.inventivegames.hologram.Hologram;
+import de.inventivegames.hologram.HologramAPI;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.*;
@@ -87,6 +89,7 @@ public class SavageFactions extends MPlugin {
 	private ClipPlaceholderAPIManager clipPlaceholderAPIManager;
 	private boolean mvdwPlaceholderAPIManager = false;
 	private Listener[] eventsListener;
+	public HashMap<Faction, Hologram> hologramMap = new HashMap<>();
 
 	public SavageFactions() {
 		plugin = this;
@@ -262,6 +265,18 @@ public class SavageFactions extends MPlugin {
 		this.setupPlaceholderAPI();
 		this.postEnable();
 		this.loadSuccessful = true;
+
+		for (Faction faction : Factions.getInstance().getAllFactions()) {
+			if (!faction.isCoreSet() || faction.getCore() == null) continue;
+
+			Hologram hologram = HologramAPI.createHologram(faction.getCore().clone().add(0.5, 1, 0.5),
+					ChatColor.translateAlternateColorCodes('&', SavageFactions.plugin.getConfig().getString("core.hologram", "&c%faction%'s Core")
+							.replace("%faction%", faction.getTag())));
+
+			hologram.spawn();
+			hologramMap.putIfAbsent(faction, hologram);
+		}
+
 		// Set startup finished to true. to give plugins hooking in a greenlight
 		SavageFactions.startupFinished = true;
 	}

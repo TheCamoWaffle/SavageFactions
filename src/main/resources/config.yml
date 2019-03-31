@@ -65,6 +65,7 @@ warp-cost:
 # Core
 core:
   default-lives: 5
+  hologram: "&c&l%faction%'s Core"
   core-block:
     type: ENCHANTMENT_TABLE
     name: "&6&lCore Block"
