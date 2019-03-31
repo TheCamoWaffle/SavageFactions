@@ -39,6 +39,18 @@ public interface Faction extends EconomyParticipator {
 
 	boolean removeWarp(String name);
 
+	Location getCore();
+
+	void setCore(Location location);
+
+	boolean isCoreSet();
+
+	void setCoreSet(boolean coreSet);
+
+	int getCoreLives();
+
+	void setCoreLives(int coreLives);
+
 	void clearWarps();
 
 	int getMaxVaults();

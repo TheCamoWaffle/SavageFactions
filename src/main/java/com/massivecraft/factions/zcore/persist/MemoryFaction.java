@@ -65,6 +65,9 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
 	protected Map<Permissable, Map<PermissableAction, Access>> permissions = new HashMap<>();
 	protected Set<BanInfo> bans = new HashSet<>();
 	protected String player;
+	protected boolean coreSet;
+	protected LazyLocation core;
+	protected int coreLives;
 	Inventory chest;
 	Map<String, Object> bannerSerialized;
 	private long lastDeath;
@@ -89,6 +92,8 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
 		this.foundedDate = System.currentTimeMillis();
 		this.maxVaults = Conf.defaultMaxVaults;
 		this.defaultRole = Role.RECRUIT;
+		this.coreSet = false;
+		this.coreLives = SavageFactions.plugin.getConfig().getInt("core.default-lives", 5);
 
 		resetPerms(); // Reset on new Faction so it has default values.
 	}
@@ -112,6 +117,9 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
 		fplayers = new HashSet<>();
 		invites = old.invites;
 		announcements = old.announcements;
+		coreSet = old.coreSet;
+		core = old.core;
+		coreLives = old.coreLives;
 		this.defaultRole = Role.NORMAL;
 
 		resetPerms(); // Reset on new Faction so it has default values.
@@ -166,6 +174,30 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
 
 	public boolean isWarpPassword(String warp, String password) {
 		return hasWarpPassword(warp) && warpPasswords.get(warp.toLowerCase()).equals(password);
+	}
+
+	public Location getCore() {
+		return core.getLocation();
+	}
+
+	public void setCore(Location location) {
+		core = new LazyLocation(location);
+	}
+
+	public boolean isCoreSet() {
+		return coreSet;
+	}
+
+	public void setCoreSet(boolean coreSet) {
+		this.coreSet = coreSet;
+	}
+
+	public int getCoreLives() {
+		return coreLives;
+	}
+
+	public void setCoreLives(int coreLives) {
+		this.coreLives = coreLives;
 	}
 
 	public String getPaypal() {

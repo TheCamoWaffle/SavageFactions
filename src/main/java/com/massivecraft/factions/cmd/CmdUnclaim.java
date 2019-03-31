@@ -10,8 +10,13 @@ import com.massivecraft.factions.zcore.fperms.Access;
 import com.massivecraft.factions.zcore.fperms.PermissableAction;
 import com.massivecraft.factions.zcore.util.TL;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class CmdUnclaim extends FCommand {
+	private Set<Player> confirmingUnclaim = new HashSet<>();
 
 	public CmdUnclaim() {
 		this.aliases.add("unclaim");
@@ -145,6 +150,24 @@ public class CmdUnclaim extends FCommand {
 			return false;
 		}
 
+		if (target.getChunk().equals(targetFaction.getCore().getChunk())) {
+			if (!confirmingUnclaim.contains(fme.getPlayer())) {
+				confirmingUnclaim.add(fme.getPlayer());
+				fme.msg(TL.CORE_CONFIRM_UNCLAIM);
+				Bukkit.getScheduler().scheduleSyncDelayedTask(SavageFactions.plugin, () -> confirmingUnclaim.remove(fme.getPlayer()), 200L);
+				return false;
+			}
+
+			for (FPlayer factionMember : targetFaction.getFPlayersWhereOnline(true)) {
+				factionMember.msg(TL.CORE_BROKEN);
+			}
+
+			targetFaction.setCoreSet(false);
+			targetFaction.setCoreLives(SavageFactions.plugin.getConfig().getInt("core.default-lives"));
+			Board.getInstance().unclaimAll(targetFaction.getId());
+			confirmingUnclaim.remove(fme.getPlayer());
+			return true;
+		}
 
 		LandUnclaimEvent unclaimEvent = new LandUnclaimEvent(target, targetFaction, fme);
 		Bukkit.getServer().getPluginManager().callEvent(unclaimEvent);

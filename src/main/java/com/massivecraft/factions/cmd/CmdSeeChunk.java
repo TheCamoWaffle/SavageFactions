@@ -122,13 +122,7 @@ public class CmdSeeChunk extends FCommand {
 			}
 			if (useParticles) {
 				if (SavageFactions.plugin.useNonPacketParticles) {
-					// Dust options only exists in the 1.13 API, so we use an
-					// alternative method to achieve this in lower versions.
-					if (SavageFactions.plugin.mc113) {
-						player.spawnParticle(Particle.REDSTONE, loc, 0, new Particle.DustOptions(Color.RED, 1));
-					} else {
-						player.getWorld().spawnParticle(Particle.REDSTONE, loc, 0, 255, 0, 0, 1);
-					}
+					player.getWorld().playEffect(loc, Effect.COLOURED_DUST, 20);
 
 				} else {
 					this.effect.display(0, 0, 0, 0, 1, loc, player);

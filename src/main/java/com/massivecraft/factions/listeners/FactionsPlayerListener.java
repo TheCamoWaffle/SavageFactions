@@ -631,17 +631,8 @@ public class FactionsPlayerListener implements Listener {
 				String subTitle = SavageFactions.plugin.getConfig().getString("Title.Format.Subtitle").replace("{Description}", factionTo.getDescription()).replace("{Faction}", factionTo.getColorTo(me) + factionTo.getTag());
 				subTitle = parseAllPlaceholders(subTitle, factionTo, player);
 				if (!SavageFactions.plugin.mc17) {
-					if (!SavageFactions.plugin.mc18) {
-						me.getPlayer().sendTitle(SavageFactions.plugin.color(title), SavageFactions.plugin.color(subTitle), SavageFactions.plugin.getConfig().getInt("Title.Options.FadeInTime"),
-								  SavageFactions.plugin.getConfig().getInt("Title.Options.ShowTime"),
-								  SavageFactions.plugin.getConfig().getInt("Title.Options.FadeOutTime"));
-					} else {
-						me.getPlayer().sendTitle(SavageFactions.plugin.color(title), SavageFactions.plugin.color(subTitle));
-					}
-
-
+					me.getPlayer().sendTitle(SavageFactions.plugin.color(title), SavageFactions.plugin.color(subTitle));
 				}
-
 			}
 
 			if (!SavageFactions.plugin.factionsFlight) {
@@ -928,73 +919,43 @@ public class FactionsPlayerListener implements Listener {
 				case LEVER:
 					return PermissableAction.LEVER;
 
-				case ACACIA_BUTTON:
-				case BIRCH_BUTTON:
-				case DARK_OAK_BUTTON:
-				case JUNGLE_BUTTON:
-				case OAK_BUTTON:
-				case SPRUCE_BUTTON:
 				case STONE_BUTTON:
 					return PermissableAction.BUTTON;
 
+				case WOODEN_DOOR:
+				case WOOD_DOOR:
 				case ACACIA_DOOR:
 				case BIRCH_DOOR:
 				case IRON_DOOR:
 				case JUNGLE_DOOR:
-				case OAK_DOOR:
 				case SPRUCE_DOOR:
 				case DARK_OAK_DOOR:
 
-				case ACACIA_TRAPDOOR:
-				case BIRCH_TRAPDOOR:
-				case DARK_OAK_TRAPDOOR:
+				case TRAP_DOOR:
 				case IRON_TRAPDOOR:
-				case JUNGLE_TRAPDOOR:
-				case OAK_TRAPDOOR:
-				case SPRUCE_TRAPDOOR:
 
 				case ACACIA_FENCE_GATE:
 				case BIRCH_FENCE_GATE:
 				case DARK_OAK_FENCE_GATE:
 				case JUNGLE_FENCE_GATE:
-				case OAK_FENCE_GATE:
+				case FENCE_GATE:
 				case SPRUCE_FENCE_GATE:
 					return PermissableAction.DOOR;
 
 				case CHEST:
 				case TRAPPED_CHEST:
-				case CHEST_MINECART:
-
-				case SHULKER_BOX:
-				case BLACK_SHULKER_BOX:
-				case BLUE_SHULKER_BOX:
-				case BROWN_SHULKER_BOX:
-				case CYAN_SHULKER_BOX:
-				case GRAY_SHULKER_BOX:
-				case GREEN_SHULKER_BOX:
-				case LIGHT_BLUE_SHULKER_BOX:
-				case LIGHT_GRAY_SHULKER_BOX:
-				case LIME_SHULKER_BOX:
-				case MAGENTA_SHULKER_BOX:
-				case ORANGE_SHULKER_BOX:
-				case PINK_SHULKER_BOX:
-				case PURPLE_SHULKER_BOX:
-				case RED_SHULKER_BOX:
-				case WHITE_SHULKER_BOX:
-				case YELLOW_SHULKER_BOX:
+				case ENDER_CHEST:
 
 				case FURNACE:
 				case DROPPER:
 				case DISPENSER:
-				case ENCHANTING_TABLE:
+				case ENCHANTMENT_TABLE:
 				case BREWING_STAND:
 				case CAULDRON:
 				case HOPPER:
 				case BEACON:
 				case JUKEBOX:
 				case ANVIL:
-				case CHIPPED_ANVIL:
-				case DAMAGED_ANVIL:
 					return PermissableAction.CONTAINER;
 				default:
 					return null;
@@ -1019,13 +980,11 @@ public class FactionsPlayerListener implements Listener {
 				case ENDER_CHEST:
 				case TRAPPED_CHEST:
 				case DISPENSER:
-				case ENCHANTING_TABLE:
+				case ENCHANTMENT_TABLE:
 				case DROPPER:
 				case FURNACE:
 				case HOPPER:
 				case ANVIL:
-				case CHIPPED_ANVIL:
-				case DAMAGED_ANVIL:
 				case BREWING_STAND:
 					return PermissableAction.CONTAINER;
 				default:

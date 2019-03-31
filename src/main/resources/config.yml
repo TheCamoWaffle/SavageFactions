@@ -62,6 +62,15 @@ warp-cost:
   delwarp: 5
   warp: 5
 
+# Core
+core:
+  default-lives: 5
+  core-block:
+    type: ENCHANTMENT_TABLE
+    name: "&6&lCore Block"
+    lore:
+      - "&ePlace this to establish your faction's core!"
+
 # Faction Fly
 # Enable Faction Fly:
 enable-faction-flight: true

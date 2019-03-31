@@ -310,6 +310,8 @@ public interface FPlayer extends EconomyParticipator {
 
 	boolean attemptClaim(Faction forFaction, FLocation location, boolean notifyFailure);
 
+	boolean attemptClaim(Faction forFaction, FLocation flocation, boolean notifyFailure, boolean checkCore);
+
 	boolean isInVault();
 
 	void setInVault(boolean status);

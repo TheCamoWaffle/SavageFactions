@@ -18,6 +18,7 @@ public class FCmdRoot extends FCommand {
 	public CmdChatSpy cmdChatSpy = new CmdChatSpy();
 	public CmdClaim cmdClaim = new CmdClaim();
 	public CmdConfig cmdConfig = new CmdConfig();
+	public CmdCore cmdCore = new CmdCore();
 	public CmdCreate cmdCreate = new CmdCreate();
 	public CmdDeinvite cmdDeinvite = new CmdDeinvite();
 	public CmdDescription cmdDescription = new CmdDescription();
@@ -141,6 +142,7 @@ public class FCmdRoot extends FCommand {
 		this.addSubCommand(this.cmdDescription);
 		this.addSubCommand(this.cmdDisband);
 
+		this.addSubCommand(this.cmdCore);
 		this.addSubCommand(this.cmdHelp);
 		this.addSubCommand(this.cmdHome);
 		this.addSubCommand(this.cmdInvite);

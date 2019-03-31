@@ -10,6 +10,7 @@ import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -126,5 +127,12 @@ public class MiscUtil {
 		ret.addAll(recruit);
 		return ret;
 	}
+
+	public static String formatDouble(double num) {
+		DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
+
+		return decimalFormat.format(num);
+	}
+
 }
 

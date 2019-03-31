@@ -318,7 +318,7 @@ public class FactionsBlockListener implements Listener {
 					}
 					for (FPlayer fplayer : fme.getFaction().getFPlayers()) {
 						//  if (fplayer == fme) { continue; }   //Idk if I wanna not send the title to the player
-						fplayer.getPlayer().sendTitle(SavageFactions.plugin.color(fme.getTag() + " Placed A WarBanner!"), SavageFactions.plugin.color("&7use &c/f tpbanner&7 to tp to the banner!"), 10, 70, 20);
+						fplayer.getPlayer().sendTitle(SavageFactions.plugin.color(fme.getTag() + " Placed A WarBanner!"), SavageFactions.plugin.color("&7use &c/f tpbanner&7 to tp to the banner!"));
 					}
 
 					bannerCooldownMap.put(fme.getTag(), true);

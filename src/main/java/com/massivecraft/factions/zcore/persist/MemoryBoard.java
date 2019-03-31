@@ -260,7 +260,12 @@ public abstract class MemoryBoard extends Board {
 
 						//row.then(String.valueOf(tag)).color(factionHere.getColorTo(faction)).tooltip(getToolTip(factionHere, fplayer));
 						//changed out with a performance friendly one line tooltip :D
-						row.then(String.valueOf(tag)).color(factionHere.getColorTo(faction)).tooltip(oneLineToolTip(factionHere, fplayer));
+
+						if (factionHere.getCore().getChunk().equals(topLeft.getRelative(dx, dz).getChunk())) {
+							row.then(String.valueOf(tag)).color(ChatColor.YELLOW).tooltip(oneLineToolTip(factionHere, fplayer));
+						} else {
+							row.then(String.valueOf(tag)).color(factionHere.getColorTo(faction)).tooltip(oneLineToolTip(factionHere, fplayer));
+						}
 					} else {
 						row.then("-").color(ChatColor.GRAY);
 					}

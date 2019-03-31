@@ -23,6 +23,7 @@ public enum Permission {
 	CLAIM_RADIUS("claim.radius"),
 	CONFIG("config"),
 	CONVERT("convert"),
+	CORE("core"),
 	CREATE("create"),
 	DEFAULTRANK("defaultrank"),
 	DEINVITE("deinvite"),

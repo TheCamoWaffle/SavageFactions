@@ -241,6 +241,20 @@ public enum TL {
 	COMMAND_CHECKPOINT_CLAIMED("&c&l[!]&7 Your current &cfaction checkpoint&7 is claimed, set a &cnew &7one!"),
 	COMMAND_CHECKPOINT_DESCRIPTION("Set or go to your faction checkpoint!"),
 
+	COMMAND_CORE_DESCRIPTION("Retrieve a core item"),
+
+	CORE_ALREADY_SET("&a&lCore &8\u00BB &7Your core has already been set!"),
+	CORE_BROKEN("&a&lCore &8\u00BB &7Your core has been broken"),
+	CORE_CANT_BREAK("&a&lCore &8\u00BB &7Only leaders may break their own core!"),
+	CORE_CANT_PLACE("&a&lCore &8\u00BB &7Only leaders may establish a faction core!"),
+	CORE_CONFIRM_BREAK("&a&lCore &8\u00BB &7You're about to break your core! Break again in 10 seconds to confirm!"),
+    CORE_CONFIRM_UNCLAIM("&a&lCore &8\u00BB &7You're about to unclaim your core resulting in all land being lost! Break again in 10 seconds to confirm!"),
+	CORE_LIVE_LOST("&a&lCore &8\u00BB &7Your core has lost a life! It has &c%health%% HP &7remaining."),
+	CORE_NOT_SET("&a&lCore &8\u00BB &7You can't claim while your core isn't set!"),
+	CORE_SET("&a&lCore &8\u00BB &7Your core has been set"),
+
+	FACTION_RAIDED("&a&lCore &8\u00BB &e%defender% &7has been raided by &e%attacker%"),
+
 	COMMAND_CREATE_MUSTLEAVE("&c&l[!]&7 You must &cleave &7your &ccurrent faction &7first."),
 	COMMAND_CREATE_INUSE("&c&l[!]&7 That tag is &calready &7in use."),
 	COMMAND_CREATE_TOCREATE("to create a new faction"),

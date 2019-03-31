@@ -10,6 +10,7 @@ import com.massivecraft.factions.zcore.fperms.Access;
 import com.massivecraft.factions.zcore.fperms.PermissableAction;
 import com.massivecraft.factions.zcore.util.TL;
 import org.bukkit.Bukkit;
+import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
@@ -71,7 +72,7 @@ public class CmdFly extends FCommand {
 					// 1.9+ based servers will use the built in particleAPI instead of packet based.
 					// any particle amount higher than 0 made them go everywhere, and the offset at 0 was not working.
 					// So setting the amount to 0 spawns 1 in the precise location
-					player.getWorld().spawnParticle(Particle.CLOUD, player.getLocation().add(0, -0.35, 0), 0);
+					player.getWorld().playEffect(player.getLocation().add(0, -0.35, 0), Effect.CLOUD, 20);
 				} else {
 					ParticleEffect.CLOUD.display((float) 0, (float) 0, (float) 0, (float) 0, 3, player.getLocation().add(0, -0.35, 0), 16);
 				}

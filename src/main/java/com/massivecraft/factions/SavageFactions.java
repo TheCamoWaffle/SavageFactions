@@ -239,6 +239,7 @@ public class SavageFactions extends MPlugin {
 				  new EXPUpgrade(),
 				  new CropUpgrades(),
 				  new SpawnerUpgrades(),
+				  new CoreBlockListener(),
 		};
 
 		for (Listener eventListener : eventsListener)
