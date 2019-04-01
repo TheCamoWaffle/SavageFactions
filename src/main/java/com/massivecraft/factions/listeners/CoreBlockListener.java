@@ -80,6 +80,11 @@ public class CoreBlockListener implements Listener {
 
         e.setCancelled(true);
         if (faction.getId().equals(factionAt.getId())) {
+            if (!fPlayer.getPlayer().hasPermission("factions.breakcore")) {
+                fPlayer.msg(TL.CORE_CANT_BREAK_OWN);
+                return;
+            }
+
             if (fPlayer.getRole() != Role.LEADER) {
                 fPlayer.msg(TL.CORE_CANT_BREAK);
                 return;

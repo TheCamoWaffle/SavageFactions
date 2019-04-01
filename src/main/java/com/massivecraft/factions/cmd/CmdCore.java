@@ -28,7 +28,15 @@ public class CmdCore extends FCommand {
             return;
         }
 
+        for (ItemStack itemStack : fme.getPlayer().getInventory().getContents()) {
+            if (!itemStack.isSimilar(coreItem)) continue;
+
+            fme.msg(TL.CORE_ALREADY_OWNED.toString());
+            return;
+        }
+
         fme.getPlayer().getInventory().addItem(coreItem);
+        fme.msg(TL.CORE_RECEIVED);
     }
 
     @Override

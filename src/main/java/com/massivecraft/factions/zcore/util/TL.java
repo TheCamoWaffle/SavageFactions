@@ -244,14 +244,17 @@ public enum TL {
 	COMMAND_CORE_DESCRIPTION("Retrieve a core item"),
 
 	CORE_ALREADY_SET("&a&lCore &8\u00BB &7Your core has already been set!"),
+	CORE_ALREADY_OWNED("&a&lCore &8\u00BB &7You already have a core item in your inventory!"),
 	CORE_BROKEN("&a&lCore &8\u00BB &7Your core has been broken"),
 	CORE_CANT_BREAK("&a&lCore &8\u00BB &7Only leaders may break their own core!"),
+	CORE_CANT_BREAK_OWN("&a&lCore &8\u00BB &7You may not break your own core!"),
 	CORE_CANT_PLACE("&a&lCore &8\u00BB &7Only leaders may establish a faction core!"),
 	CORE_CONFIRM_BREAK("&a&lCore &8\u00BB &7You're about to break your core! Break again in 10 seconds to confirm!"),
     CORE_CONFIRM_UNCLAIM("&a&lCore &8\u00BB &7You're about to unclaim your core resulting in all land being lost! Break again in 10 seconds to confirm!"),
 	CORE_INFO("&a&lCore &8\u00BB &7This core has &c%health%% HP &7remaining."),
 	CORE_LIVE_LOST("&a&lCore &8\u00BB &7Your core has lost a life! It has &c%health%% HP &7remaining."),
 	CORE_NOT_SET("&a&lCore &8\u00BB &7You can't claim while your core isn't set!"),
+	CORE_RECEIVED("&a&lCore &8\u00BB &7You have received a core block"),
 	CORE_SET("&a&lCore &8\u00BB &7Your core has been set"),
 
 	FACTION_RAIDED("&a&lCore &8\u00BB &e%defender% &7has been raided by &e%attacker%"),
